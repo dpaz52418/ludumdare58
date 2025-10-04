@@ -103,6 +103,8 @@ untitledsquirrelgame/*.mdb
 untitledsquirrelgame/*.opendb
 untitledsquirrelgame/*.VC.db
 
+untitledsquirrelgame/UserSettings/
+
 # Rider / JetBrains
 untitledsquirrelgame/.idea/
 untitledsquirrelgame/*.sln.iml
