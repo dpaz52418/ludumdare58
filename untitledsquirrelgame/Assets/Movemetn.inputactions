@@ -1,0 +1,55 @@
+{
+    "version": 1,
+    "name": "Movemetn",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "e07cf7a5-811c-43ce-b040-3051aa165f24",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "e2be41ca-d890-4c29-871f-ced29758ef53",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "ee671b0e-a6d8-4ccb-acfb-510173d42361",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "278cdf84-5fc8-4624-b1d5-8f2abfebc3df",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "19681cfb-a4ec-4816-9a3c-0d4ed288b350",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
