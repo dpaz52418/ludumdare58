@@ -119,6 +119,62 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &584109271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 584109273}
+  - component: {fileID: 584109274}
+  m_Layer: 0
+  m_Name: CollectiblesSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &584109273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584109271}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.38969, y: -0.08382, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &584109274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584109271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab58c66c8f43549219e429024f759b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectSpawn
+  collectibles:
+  - {fileID: 7108327907137365634, guid: b79950656f2c143679cc3f986f70769a, type: 3}
+  - {fileID: 1549261553498161949, guid: aae5d3aa2f4d34cf8a88c712d0fefd98, type: 3}
+  - {fileID: 1519779745775841548, guid: 52034219d1fd1471b8cdcebfc264f2cf, type: 3}
+  - {fileID: 4710264432368890310, guid: cf392f847ff124c54a9bcaf681e40515, type: 3}
+  - {fileID: 8723016639647308780, guid: 38cac241ab8f24ea6841d234a3da3d4f, type: 3}
+  spawnChance: 0.025
+  rarespawnChance: 0.01
+  rowHeight: 1
+  rowWidth: 11
+  tileSize: 1
+  startX: -6
 --- !u!1 &657889641
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,10 +415,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f04bf7e8c8d246dc81ee8c6af8ce68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraScroller
-  scrollSpeed: 2
+  scrollSpeed: 1
   background: {fileID: 1416808968}
+  spawner: {fileID: 584109274}
   rowHeight: 1
   rowsAhead: 10
+  rowsBelow: 5
+  buffer: 2
+  minRow: 0
 --- !u!1 &907588559
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,6 +2094,7 @@ MonoBehaviour:
   rightEdgeTile: {fileID: 11400000, guid: 51804cac00b8744bda0b87b75504aa3e, type: 2}
   middleTile: {fileID: 11400000, guid: bfa83f670a297467a98f2b4235f44eae, type: 2}
   rowWidth: 11
+  startX: -6
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2041,3 +2102,4 @@ SceneRoots:
   - {fileID: 719523508}
   - {fileID: 1416808967}
   - {fileID: 657889643}
+  - {fileID: 584109273}

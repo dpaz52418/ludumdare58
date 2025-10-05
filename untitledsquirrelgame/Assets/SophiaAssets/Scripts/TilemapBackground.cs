@@ -1,6 +1,6 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System.Collections;
 
 public class TilemapBackground : MonoBehaviour
 {
@@ -9,6 +9,8 @@ public class TilemapBackground : MonoBehaviour
     public TileBase rightEdgeTile;
     public TileBase middleTile;
     public int rowWidth = 11;
+    public int startX = -6; // note starting shifted 6 units on x-axis
+
 
     // tracks generated rows
     private int highestRowGenerated = 0;
@@ -27,7 +29,11 @@ public class TilemapBackground : MonoBehaviour
                 else
                     tileToPlace = middleTile;            // same tile in the middle
 
-                tilemap.SetTile(new Vector3Int(x - 6, rowIndex, 0), tileToPlace);
+                tilemap.SetTile(new Vector3Int(x + startX, rowIndex, 0), tileToPlace);
+                // Vector3 worldPos = new Vector3(x + 0.5f, rowIndex + 0.5f, 0);
+                // Vector3Int cellPos = tilemap.WorldToCell(worldPos);
+                // tilemap.SetTile(cellPos, tileToPlace);
+
             }
         highestRowGenerated = Mathf.Max(highestRowGenerated, rowIndex);
     }
@@ -46,7 +52,10 @@ public class TilemapBackground : MonoBehaviour
         {
             for (int x = 0; x < rowWidth; x++)
             {
-                tilemap.SetTile(new Vector3Int(x - 6, y, 0), null);
+                tilemap.SetTile(new Vector3Int(x + startX, y, 0), null);
+                // Vector3 worldPos = new Vector3(x + 0.5f, y + 0.5f, 0);
+                // Vector3Int cellPos = tilemap.WorldToCell(worldPos);
+                // tilemap.SetTile(cellPos, null);
             }
         }
         lowestRowGenerated = minRow;

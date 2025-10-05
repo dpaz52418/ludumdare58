@@ -1,29 +1,17 @@
-// using UnityEngine;
-
-// public class CameraScroller : MonoBehaviour
-// {
-//     public float scrollSpeed = 1f;
-//     public Vector2 direction = Vector2.up;
-
-//     void Update()
-//     {
-//         // moves camera continuously in the chosen direction (up)
-//         transform.position += (Vector3)(direction.normalized * scrollSpeed * Time.deltaTime);
-//     }
-// }
-
 using UnityEngine;
 
 public class CameraScroller : MonoBehaviour
 {
     public float scrollSpeed = 1f;
-
     public TilemapBackground background;  
+    public CollectSpawn spawner;  // collectibles spawner
     public float rowHeight = 1f;   
     public int rowsAhead = 10;  // how many rows to keep generated ahead
     public int rowsBelow = 5;   // how many rows to keep below camera
-    private int lastRowGenerated = 0;
     public int buffer = 2;
+    public int minRow; 
+
+    private int lastRowGenerated = 0;
 
 
     void Start()
@@ -45,11 +33,13 @@ public class CameraScroller : MonoBehaviour
         if (currentRow + rowsAhead > lastRowGenerated)
         {
             background.GenerateRowsUpTo(currentRow + rowsAhead);
+            spawner.SpawnRowsUpTo(currentRow + rowsAhead);
             lastRowGenerated = currentRow + rowsAhead;
         }
 
         // deletes rows below camera
-        background.DeleteRowsBelow((currentRow - rowsBelow) - buffer);  // buffer of 2 rows
-        //spawner.DespawnBelowRow((currentRow - rowsBelow) - buffer); // clean up interactives
+        minRow = (currentRow - rowsBelow) - buffer;
+        background.DeleteRowsBelow(minRow);  // buffer of 2 rows
+        spawner.DespawnBelowCollectibles(minRow); // clean up interactives
     }
 }
