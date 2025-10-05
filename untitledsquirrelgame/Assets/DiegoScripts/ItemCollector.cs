@@ -49,7 +49,7 @@ public class ItemCollector : MonoBehaviour
         // 
     }
 
-    private void UpdatePlayerSprite()
+    public void UpdatePlayerSprite()
     {
         if (acornCheeks >= 5 && fiveAcornsSprite != null)
         {
