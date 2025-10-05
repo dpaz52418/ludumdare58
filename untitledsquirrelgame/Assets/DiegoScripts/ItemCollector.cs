@@ -11,7 +11,10 @@ public class ItemCollector : MonoBehaviour
     public Sprite threeAcornsSprite;
     public Sprite fiveAcornsSprite;
 
-    // private AudioSource audioSoure;
+    // stuff for altering speed of movement.
+    private Movement movementScript;
+
+    //private AudioSource audioSource;
     private SpriteRenderer spriteRenderer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,11 +22,17 @@ public class ItemCollector : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        
+        movementScript = GetComponent<Movement>();
+
+
         // Code to set starting sprite. Not sure if we'll need this but it's here anyway.
-        if (normalSprite != null){
+        if (normalSprite != null)
+        {
             spriteRenderer.sprite = normalSprite;
         }
+
+        // Stuff for audio
+        // audioSource = GetComponent<AudioSource>(); ?? gameObject.AddComponent<AudioSource>().
     }
 
     // Update is called once per frame
@@ -37,16 +46,27 @@ public class ItemCollector : MonoBehaviour
         // Colliding with collectible acorns
         if (collision.CompareTag("Collectible"))
         {
-            acornCheeks++;
-            UpdatePlayerSprite();
+            // Had a purpose. I moved its purpose to CollectibleItem. See collectibleitem's ontriggerenter.
+            if (acornCheeks < 5)
+            {
+                // audioSource.PlayOneShot(collectSFX);
+                //acornCheeks++;
+                //UpdatePlayerSprite();
+            }
         }
 
         // Code for colliding with deposit holes. WRITE LATER
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void speedChanger()
     {
-        // 
+        // We've grabbed the movement script in the Start() function. We also
+        // have access to the acornCheeks variable.
+
+        if (acornCheeks == 5)
+        {
+            
+        }
     }
 
     public void UpdatePlayerSprite()
