@@ -367,7 +367,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.3463, y: 0.3399, z: 0}
-  m_LocalScale: {x: 1.120563, y: 1.1215097, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -721,7 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c6c793628dc3546b9fd14b97d13df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  originalSprite: {fileID: 0}
+  originalSprite: {fileID: 969129967, guid: fdb5293700cbe4bcab45021f7bda3109, type: 3}
   collectedAcorn: {fileID: 195854620, guid: fdb5293700cbe4bcab45021f7bda3109, type: 3}
 --- !u!1 &477980041
 GameObject:
@@ -754,8 +754,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c6c793628dc3546b9fd14b97d13df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  originalSprite: {fileID: 0}
-  collectedAcorn: {fileID: -712631045867808456, guid: b670ab75dde984907b8570040daa08c5, type: 3}
+  originalSprite: {fileID: -477227497, guid: fdb5293700cbe4bcab45021f7bda3109, type: 3}
+  collectedAcorn: {fileID: 195854620, guid: fdb5293700cbe4bcab45021f7bda3109, type: 3}
 --- !u!61 &477980043
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1558,8 +1558,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c6c793628dc3546b9fd14b97d13df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  originalSprite: {fileID: 0}
-  collectedAcorn: {fileID: -712631045867808456, guid: b670ab75dde984907b8570040daa08c5, type: 3}
+  originalSprite: {fileID: 1804620740, guid: fdb5293700cbe4bcab45021f7bda3109, type: 3}
+  collectedAcorn: {fileID: 195854620, guid: fdb5293700cbe4bcab45021f7bda3109, type: 3}
 --- !u!61 &2057631678
 BoxCollider2D:
   m_ObjectHideFlags: 0
