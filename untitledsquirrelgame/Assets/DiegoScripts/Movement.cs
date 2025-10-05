@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 12;
     private Rigidbody2D rb;
     private Vector2 moveInput;
 
@@ -24,5 +24,13 @@ public class Movement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+    }
+
+    public void setSpeed(int nuts)
+    {
+        if (nuts == 5)
+        {
+            //moveSpeed = 
+        }
     }
 }
