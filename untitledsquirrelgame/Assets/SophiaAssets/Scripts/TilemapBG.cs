@@ -10,8 +10,10 @@ public class TilemapBackground : MonoBehaviour
     public TileBase middleTile;
     public int rowWidth = 11;
 
-    // Tracks how far background has been generated
+    // tracks generated rows
     private int highestRowGenerated = 0;
+    private int lowestRowGenerated = 0;
+
 
     public void GenerateRow(int rowIndex)
     {
@@ -37,4 +39,17 @@ public class TilemapBackground : MonoBehaviour
             GenerateRow(i);
         }
     }
+
+    public void DeleteRowsBelow(int minRow)
+    {
+        for (int y = lowestRowGenerated; y < minRow; y++)
+        {
+            for (int x = 0; x < rowWidth; x++)
+            {
+                tilemap.SetTile(new Vector3Int(x - 6, y, 0), null);
+            }
+        }
+        lowestRowGenerated = minRow;
+    }
+
 }
