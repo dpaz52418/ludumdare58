@@ -199,25 +199,30 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "A long\u2026 long time ago, before time itself, The Lone God separated
-    the heavens from the earth with nothing but their bare hands. But when faced
-    with the emptiness of space, THEY severed one of THEIR arms, casting it down
-    to the void below. From this arm grew the mighty Supreme Tree of Life\u2014Yggdrasil.\n\nFrom
-    the blood of the Lone God, Yggdrasil birthed the cycles of the world, and from
-    their breath came the acorns. And so, the squirrels were born, tasked with guarding
-    the tree and its bounty. But deep beneath Yggdrasil, an ancient force stirred.
-    The Draughi, dark beings born of the tree\u2019s shadows, rose against the first
-    inhabitants of the world.\n\nThus, a great war raged between the squirrels and
-    the Draughi, and the fate of Yggdrasil was sealed. To punish the Draughi\u2019s
-    defiance of the natural order, the Lone God transformed them into snakes\u2014forever
+  m_text: "How gameplay works:\n\nUse WASD to move squirrel up left down right respectively.
+    \n\nCollect as much acorns as you can. \n\nOnce the squirrel is full of acorns,
+    you must deposit into the hole.\n\nDon't get captured by the serpentine Jormungandr\n\nPress
+    enter to skip text and lore\n\nThe Nut Collector:\n\nA long\u2026 long time ago,
+    before time itself, The Lone God separated the heavens from the earth with nothing
+    but their bare hands. But when faced with the emptiness of space, THEY severed
+    one of THEIR arms, casting it down to the void below. From this arm grew the
+    mighty Supreme Tree of Life\u2014Yggdrasil.\n\nFrom the blood of the Lone God,
+    Yggdrasil birthed the cycles of the world, and from their breath came the acorns.
+    And so, the squirrels were born, tasked with guarding the tree and its bounty.
+    But deep beneath Yggdrasil, an ancient force stirred. The Jormungandr, a dark
+    being born of the tree\u2019s shadows, rose against the first inhabitants of
+    the world.\n\nThus, a great war raged between the squirrels and the Jormungandr,
+    and the fate of Yggdrasil was sealed. To punish the Jormungandr\u2019s defiance
+    of the natural order, the Lone God transformed them into the form of a snake\u2014forever
     bound to the roots of the tree, a symbol of their rebellion.\n\nAs the Lone God
     ascended to the heavens, THEY decreed that Yggdrasil would one day face Ragnarok.
     To survive the coming calamity, the squirrels must gather every acorn from Yggdrasil
     and deposit it into the tree, to prepare for Fimbulvinter\u2014the coldest winter
     the world has ever known.\n\nAnd so, the squirrels chose one among their kind,
-    the bravest and most cunning of them all\u2014Ratatoskr. It is you, the Ratatoskr,
-    who must embark on this perilous journey to save your world, collect the sacred
-    acorns, and face the serpentine wrath of the Draughi\u2026 before time runs out."
+    the bravest and most cunning of them all\u2014Ratatoskr. It is you, Ratatoskr,
+    The Nut Collector, who must embark on this perilous journey to save your world,
+    collect the sacred acorns, and face the serpentine wrath of the Jormungandr\u2026
+    before time runs out."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
