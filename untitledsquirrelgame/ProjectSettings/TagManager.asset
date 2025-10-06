@@ -43,11 +43,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 2341292413
-    locked: 0
   - name: Collectibles
     uniqueID: 674536011
+    locked: 0
+  - name: Player
+    uniqueID: 2341292413
     locked: 0
   m_RenderingLayers:
   - Default
