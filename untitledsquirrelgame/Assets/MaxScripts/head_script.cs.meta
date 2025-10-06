@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 97ce2629d4d64649bba2136df118d6f2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - segment_sprite: {fileID: -4658145494014179070, guid: c0a2481bbe7420bc392887cd6f9e5bbe, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
