@@ -18,17 +18,18 @@ public class head_script : MonoBehaviour
     public float radius;
 
     public float speed;
+    public float scale;
     void Start()
     {
 
-        transform.localScale = new Vector3(0.08645276f, 0.08645276f, 1f);
         segment_length = 50;
+        scale = 0.08645276f;
         body_segments = new GameObject[segment_length];
-        segment_lengths = CalcSegmentSizes(segment_length, 0.08645276f);
+        segment_lengths = CalcSegmentSizes(segment_length, scale);
         speed = 5;
         head_direction = new Vector3(0.0f, 1.0f, 0.0f);
         radius = 0.2f;
-
+        transform.localScale = new Vector3(scale, scale, 1f);
 
         for (int i = 0; i < segment_length; i++)
         {
