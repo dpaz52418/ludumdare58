@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    /*
+    
     public void TakeDamage(float knockback)
     {
         if (isStunned) { return; }
@@ -45,7 +45,7 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
     }
-    */
+    
 
     private System.Collections.IEnumerator StunCoroutine()
     {
@@ -74,6 +74,12 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 viewportPost = mainCamera.WorldToViewportPoint(transform.position);
+        Vector3 viewportPos = mainCamera.WorldToViewportPoint(transform.position);
+
+        if (viewportPos.x < 0 || viewportPos.x > 1 ||
+            viewportPos.y < 0 || viewportPos.y > 1)
+        {
+            Die();
+        }
     }
 }
