@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public int nutCount;
     public float stunDuration = 0.5f;
     private bool isStunned = false;
+    private Camera mainCamera;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -18,8 +19,10 @@ public class PlayerHealth : MonoBehaviour
         nutCount = ic.acornCheeks;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        mainCamera = Camera.main;
 
     }
+
 
     public void TakeDamage(float knockback)
     {
@@ -69,6 +72,6 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Vector3 viewportPost = mainCamera.WorldToViewportPoint(transform.position);
     }
 }

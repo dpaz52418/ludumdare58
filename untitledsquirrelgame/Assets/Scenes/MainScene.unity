@@ -415,6 +415,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6078628592021781612, guid: d30d6b1bb1e63ed449ae70a54ca9a581, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078628592021781612, guid: d30d6b1bb1e63ed449ae70a54ca9a581, type: 3}
       propertyPath: normalSprite
       value: 
       objectReference: {fileID: -3930233164492611837, guid: 6a2f04d730b914f40ac9a17c1f1e63b3, type: 3}
@@ -429,6 +433,14 @@ PrefabInstance:
     - target: {fileID: 7643025632960970941, guid: d30d6b1bb1e63ed449ae70a54ca9a581, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8038609613212497380, guid: d30d6b1bb1e63ed449ae70a54ca9a581, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968359265095991351, guid: d30d6b1bb1e63ed449ae70a54ca9a581, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
