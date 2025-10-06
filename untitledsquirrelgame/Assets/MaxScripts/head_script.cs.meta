@@ -4,6 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - squirrel: {fileID: 6879980364211018904, guid: 015d783f928af411c8e83b18ec2c621a, type: 3}
   - segment_sprite: {fileID: -4658145494014179070, guid: c0a2481bbe7420bc392887cd6f9e5bbe, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}

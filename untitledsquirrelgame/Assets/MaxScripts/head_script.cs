@@ -5,6 +5,8 @@ using System;
 
 public class head_script : MonoBehaviour
 {
+
+    public GameObject squirrel;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Sprite segment_sprite;
     //public GameObject obj;
@@ -21,21 +23,25 @@ public class head_script : MonoBehaviour
     public float scale;
     void Start()
     {
-
+        int sorting_order = 30;
         segment_length = 50;
         scale = 0.08645276f;
         body_segments = new GameObject[segment_length];
         segment_lengths = CalcSegmentSizes(segment_length, scale);
-        speed = 5;
+        speed = 3;
         head_direction = new Vector3(0.0f, 1.0f, 0.0f);
         radius = 0.2f;
         transform.localScale = new Vector3(scale, scale, 1f);
+        GetComponent<SpriteRenderer>().sortingOrder = sorting_order;
+
 
         for (int i = 0; i < segment_length; i++)
         {
             GameObject obj = new GameObject("segment");
             SpriteRenderer sprite_render = obj.AddComponent<SpriteRenderer>();
+            obj.GetComponent<SpriteRenderer>().sortingOrder = sorting_order;
             sprite_render.sprite = segment_sprite;
+
 
             float seg_length = segment_lengths[i];
             obj.transform.localScale = new Vector3(seg_length, seg_length, 1f);
@@ -50,11 +56,12 @@ public class head_script : MonoBehaviour
     void Update()
     {
         Vector2 pixel_coords = Mouse.current.position.ReadValue();
-        Vector3 cursor_pos = Camera.main.ScreenToWorldPoint(new Vector3(pixel_coords.x, pixel_coords.y, 0f));
+        //Vector3 cursor_pos = Camera.main.ScreenToWorldPoint(new Vector3(pixel_coords.x, pixel_coords.y, 0f));
+
 
         Vector3 snake_pos = transform.position;
-        head_direction.x = cursor_pos.x - snake_pos.x;
-        head_direction.y = cursor_pos.y - snake_pos.y;
+        head_direction.x = squirrel.transform.position.x - snake_pos.x;
+        head_direction.y = squirrel.transform.position.y - snake_pos.y;
         head_direction = head_direction.normalized;
 
         transform.position += (Time.deltaTime) * (head_direction) * speed;
@@ -68,7 +75,7 @@ public class head_script : MonoBehaviour
         }
         //obj.transform.position = CalcNewDistance(obj.transform.position, radius, transform.position);
 
-        Vector3 dir = cursor_pos - transform.position;
+        Vector3 dir = squirrel.transform.position - transform.position;
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
