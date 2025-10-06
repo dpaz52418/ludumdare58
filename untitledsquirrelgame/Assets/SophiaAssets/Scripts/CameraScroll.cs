@@ -3,6 +3,7 @@ using UnityEngine;
 public class CameraScroller : MonoBehaviour
 {
     public float scrollSpeed = 1f;
+    public float acceleration = 0.05f;
     public TilemapBackground background;  
     public CollectSpawn spawner;  // collectibles spawner
     public float rowHeight = 1f;   
@@ -25,6 +26,10 @@ public class CameraScroller : MonoBehaviour
     {
         // camera moves upward
         transform.position += Vector3.up * scrollSpeed * Time.deltaTime;
+
+        // camera gradually gets faster, alongside snake move speed and player move speed.
+        //scrollSpeed += acceleration * Time.deltaTime;
+
 
         // row the camera has reached
         int currentRow = Mathf.FloorToInt(transform.position.y / rowHeight);  // in case rowHeight != 1
