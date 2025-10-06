@@ -73,7 +73,7 @@ public class ItemCollector : MonoBehaviour
         {
             if (acornCheeks > 0)
             {
-                ph.TakeDamage(knockback);
+                cameraKiller.PlayerDeath(this.gameObject);
             }
             else
             {

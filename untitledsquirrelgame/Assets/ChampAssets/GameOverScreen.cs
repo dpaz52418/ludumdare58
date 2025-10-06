@@ -23,6 +23,8 @@ public class GameOverScreen : MonoBehaviour
 
     public void ExitButton()
     {
+        ScoreManager.Instance.acornScore = 0;
+        ScoreManager.Instance.metersAscended = 0;
         SceneManager.LoadScene("NutCollectorMainMenu");
     }
 }

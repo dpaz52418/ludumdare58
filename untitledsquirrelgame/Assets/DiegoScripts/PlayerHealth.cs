@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     public float stunDuration = 0.5f;
     private bool isStunned = false;
     private Camera mainCamera;
+    public CameraKill cameraKiller;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -20,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         mainCamera = Camera.main;
+        cameraKiller = mainCamera.GetComponent<CameraKill>();
 
     }
 
@@ -32,17 +34,22 @@ public class PlayerHealth : MonoBehaviour
         nutCount = ic.acornCheeks;
         if (nutCount != 0)
         {
+            /*
             nutCount = 0;
+            ic.acornCheeks = 0;
             rb.linearVelocityX = 0;
             rb.linearVelocityY = knockback;
-
+            Debug.Log("pre awesome!!");
             StartCoroutine(StunCoroutine());
-
+            Debug.Log("awesome!!!");
+            */
+         // A problem I couldn't quite solve is above. Come back one day, Diego! - Diego from 10/6/25
+            cameraKiller.PlayerDeath(this.gameObject);
 
         }
         else
         {
-            Die();
+            cameraKiller.PlayerDeath(this.gameObject);
         }
     }
     

@@ -29,8 +29,6 @@ public class head_script : MonoBehaviour
     }
     void Start()
     {
-        coll = GetComponent<CircleCollider2D>();
-        coll.radius = coll.radius * scale;
         
         int sorting_order = 30;
         segment_length = 50;
@@ -38,7 +36,8 @@ public class head_script : MonoBehaviour
 
         // Collider scaling added by Diego.
         coll = GetComponent<CircleCollider2D>();
-        coll.radius = scale;
+        coll.radius = 0.2f;
+
 
         body_segments = new GameObject[segment_length];
         segment_lengths = CalcSegmentSizes(segment_length, scale);
