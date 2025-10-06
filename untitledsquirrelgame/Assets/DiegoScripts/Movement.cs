@@ -26,6 +26,8 @@ public class Movement : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();
     }
 
+    
+    // Called by other scripts
     public void setSpeed(int nuts)
     {
         if (nuts == 5)
