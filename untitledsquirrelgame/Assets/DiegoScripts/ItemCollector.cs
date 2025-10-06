@@ -12,6 +12,9 @@ public class ItemCollector : MonoBehaviour
     public Sprite normalSprite;
     public Sprite threeAcornsSprite;
     public Sprite fiveAcornsSprite;
+    public Camera cameraAwesome;
+
+    public CameraKill cameraKiller;
 
     // stuff for altering speed of movement.
     private Movement movementScript;
@@ -29,6 +32,10 @@ public class ItemCollector : MonoBehaviour
         movementScript = GetComponent<Movement>();
 
         ph = GetComponent<PlayerHealth>();
+
+        cameraAwesome = Camera.main;
+
+        cameraKiller = cameraAwesome.GetComponent<CameraKill>();
 
 
         // Code to set starting sprite. Not sure if we'll need this but it's here anyway.
@@ -62,12 +69,17 @@ public class ItemCollector : MonoBehaviour
         }
 
         // Code for colliding with enemies.
-        /*
         if (collision.CompareTag("Enemy"))
         {
-            ph.TakeDamage(knockback);
+            if (acornCheeks > 0)
+            {
+                ph.TakeDamage(knockback);
+            }
+            else
+            {
+                cameraKiller.PlayerDeath(this.gameObject);
+            }
         }
-        */
     }
 
     private void speedChanger()

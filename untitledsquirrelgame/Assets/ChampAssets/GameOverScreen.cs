@@ -18,7 +18,7 @@ public class GameOverScreen : MonoBehaviour
         ScoreManager.Instance.acornScore = 0;
         ScoreManager.Instance.metersAscended = 0;
         SceneManager.LoadScene("MainScene");
-
+        
     }
 
     public void ExitButton()

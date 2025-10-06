@@ -21,16 +21,25 @@ public class head_script : MonoBehaviour
 
     public float speed;
     public float scale;
+    public CircleCollider2D coll;
     void Awake()
     {
         squirrel = GameObject.FindGameObjectWithTag("Player");
+
     }
     void Start()
     {
+        coll = GetComponent<CircleCollider2D>();
+        coll.radius = coll.radius * scale;
         
         int sorting_order = 30;
         segment_length = 50;
         scale = 0.08645276f;
+
+        // Collider scaling added by Diego.
+        coll = GetComponent<CircleCollider2D>();
+        coll.radius = scale;
+
         body_segments = new GameObject[segment_length];
         segment_lengths = CalcSegmentSizes(segment_length, scale);
         speed = 3;
