@@ -62,10 +62,12 @@ public class ItemCollector : MonoBehaviour
         }
 
         // Code for colliding with enemies.
+        /*
         if (collision.CompareTag("Enemy"))
         {
             ph.TakeDamage(knockback);
         }
+        */
     }
 
     private void speedChanger()

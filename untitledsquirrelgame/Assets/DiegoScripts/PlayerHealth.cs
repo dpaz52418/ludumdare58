@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
+    /*
     public void TakeDamage(float knockback)
     {
         if (isStunned) { return; }
@@ -44,6 +45,7 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
     }
+    */
 
     private System.Collections.IEnumerator StunCoroutine()
     {
