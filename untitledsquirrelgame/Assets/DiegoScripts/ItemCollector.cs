@@ -63,10 +63,7 @@ public class ItemCollector : MonoBehaviour
         // We've grabbed the movement script in the Start() function. We also
         // have access to the acornCheeks variable.
 
-        if (acornCheeks == 5)
-        {
-            
-        }
+        movementScript.setSpeed(acornCheeks);
     }
 
     public void UpdatePlayerSprite()
@@ -83,5 +80,6 @@ public class ItemCollector : MonoBehaviour
         {
             spriteRenderer.sprite = normalSprite;
         }
+        speedChanger();
     }
 }
