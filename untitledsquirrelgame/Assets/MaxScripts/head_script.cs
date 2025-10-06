@@ -30,7 +30,6 @@ public class head_script : MonoBehaviour
     void Start()
     {
         
-        int sorting_order = 30;
         segment_length = 50;
         scale = 0.08645276f;
 
@@ -45,15 +44,16 @@ public class head_script : MonoBehaviour
         head_direction = new Vector3(0.0f, 1.0f, 0.0f);
         radius = 0.2f;
         transform.localScale = new Vector3(scale, scale, 1f);
-        GetComponent<SpriteRenderer>().sortingOrder = sorting_order;
+        //GetComponent<SpriteRenderer>().sortingOrder = sorting_order;
 
 
         for (int i = 0; i < segment_length; i++)
         {
             GameObject obj = new GameObject("segment");
             SpriteRenderer sprite_render = obj.AddComponent<SpriteRenderer>();
-            obj.GetComponent<SpriteRenderer>().sortingOrder = sorting_order;
+            //obj.GetComponent<SpriteRenderer>().sortingOrder = sorting_order;
             sprite_render.sprite = segment_sprite;
+            sprite_render.sortingLayerName = "Snake";
 
 
             float seg_length = segment_lengths[i];
