@@ -60,7 +60,7 @@ public class PlayerHealth : MonoBehaviour
         isStunned = false;
     }
 
-    private void Die()
+    public void Die()
     {
         gameObject.SetActive(false);
     }
