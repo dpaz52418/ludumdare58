@@ -5,6 +5,8 @@ using System.Collections;
 public class TilemapBackground : MonoBehaviour
 {
     public Tilemap tilemap;
+    public Tilemap borders;
+
     public TileBase leftEdgeTile;
     public TileBase rightEdgeTile;
     public TileBase middleTile;
@@ -22,18 +24,27 @@ public class TilemapBackground : MonoBehaviour
         for (int x = 0; x < rowWidth; x++)
             {
                 TileBase tileToPlace;
+                Tilemap tilemapToPlace;
+
                 if (x == 0)
+                {
                     tileToPlace = leftEdgeTile;          // left border
-                else if (x == rowWidth - 1)
+                    tilemapToPlace = borders;
+                }
+
+                else if (x == rowWidth - 1) 
+                {
                     tileToPlace = rightEdgeTile;         // right border
+                    tilemapToPlace = borders;
+                }
+
                 else
+                {
                     tileToPlace = middleTile;            // same tile in the middle
+                    tilemapToPlace = tilemap;
+                }
 
-                tilemap.SetTile(new Vector3Int(x + startX, rowIndex, 0), tileToPlace);
-                // Vector3 worldPos = new Vector3(x + 0.5f, rowIndex + 0.5f, 0);
-                // Vector3Int cellPos = tilemap.WorldToCell(worldPos);
-                // tilemap.SetTile(cellPos, tileToPlace);
-
+                tilemapToPlace.SetTile(new Vector3Int(x + startX, rowIndex, 0), tileToPlace);
             }
         highestRowGenerated = Mathf.Max(highestRowGenerated, rowIndex);
     }
@@ -50,13 +61,13 @@ public class TilemapBackground : MonoBehaviour
     {
         for (int y = lowestRowGenerated; y < minRow; y++)
         {
-            for (int x = 0; x < rowWidth; x++)
+            for (int x = 1; x < rowWidth - 1; x++)
             {
                 tilemap.SetTile(new Vector3Int(x + startX, y, 0), null);
-                // Vector3 worldPos = new Vector3(x + 0.5f, y + 0.5f, 0);
-                // Vector3Int cellPos = tilemap.WorldToCell(worldPos);
-                // tilemap.SetTile(cellPos, null);
             }
+            borders.SetTile(new Vector3Int(startX, y, 0), null);
+            borders.SetTile(new Vector3Int(startX + rowWidth - 1, y, 0), null);
+
         }
         lowestRowGenerated = minRow;
     }
