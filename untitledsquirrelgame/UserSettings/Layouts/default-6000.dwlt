@@ -326,7 +326,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/DiegoAssets/PrefabTiles
+    - Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -336,15 +336,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/DiegoAssets/PrefabTiles
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /home/maxwe/Desktop/Projects/ludumdare58/untitledsquirrelgame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: aab90000
-    m_LastClickedID: 47530
+    m_SelectedIDs: f4b80000
+    m_LastClickedID: 47348
     m_ExpandedIDs: 00000000f4b80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -522,7 +522,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 0e61ffff5a86fffff4f9ffff
+      m_ExpandedIDs: 7ae4ffff06fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
