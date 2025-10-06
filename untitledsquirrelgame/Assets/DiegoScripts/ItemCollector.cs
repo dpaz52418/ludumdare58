@@ -1,4 +1,5 @@
 using Unity.VisualScripting;
+using UnityEditor.Sprites;
 using UnityEngine;
 using UnityEngine.TextCore;
 
@@ -6,6 +7,7 @@ public class ItemCollector : MonoBehaviour
 {
     public int acornCheeks = 0;
     // public AudioClip collectSFX;
+    public float knockback = 3f;
 
     public Sprite normalSprite;
     public Sprite threeAcornsSprite;
@@ -13,6 +15,8 @@ public class ItemCollector : MonoBehaviour
 
     // stuff for altering speed of movement.
     private Movement movementScript;
+
+    private PlayerHealth ph;
 
     //private AudioSource audioSource;
     private SpriteRenderer spriteRenderer;
@@ -23,6 +27,8 @@ public class ItemCollector : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         movementScript = GetComponent<Movement>();
+
+        ph = GetComponent<PlayerHealth>();
 
 
         // Code to set starting sprite. Not sure if we'll need this but it's here anyway.
@@ -55,7 +61,11 @@ public class ItemCollector : MonoBehaviour
             }
         }
 
-        // Code for colliding with deposit holes. WRITE LATER
+        // Code for colliding with enemies.
+        if (collision.CompareTag("Enemy"))
+        {
+            ph.TakeDamage(knockback);
+        }
     }
 
     private void speedChanger()
