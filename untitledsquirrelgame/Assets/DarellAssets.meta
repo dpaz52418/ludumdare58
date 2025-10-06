@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 293a3b8e4a7269d4285990335fe5404c
+<<<<<<<< HEAD:untitledsquirrelgame/Assets/DarellAssets/TextMesh Pro/Shaders.meta
+guid: 9b0139bfeda5faf4faf33079b368d6e6
+========
+guid: d729541d06532e743a17b2de585f3547
+>>>>>>>> 330f0735ead9357b841532aceee408410b2beb9a:untitledsquirrelgame/Assets/DarellAssets.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
