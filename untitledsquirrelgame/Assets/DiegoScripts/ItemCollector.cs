@@ -5,6 +5,7 @@ using UnityEngine.TextCore;
 
 public class ItemCollector : MonoBehaviour
 {
+    [SerializeField] private Animator _animator_1;
     public int acornCheeks = 0;
     // public AudioClip collectSFX;
     public float knockback = 3f;
@@ -92,18 +93,20 @@ public class ItemCollector : MonoBehaviour
 
     public void UpdatePlayerSprite()
     {
-        if (acornCheeks >= 5 && fiveAcornsSprite != null)
-        {
-            spriteRenderer.sprite = fiveAcornsSprite;
-        }
-        else if (acornCheeks >= 3 && threeAcornsSprite != null)
-        {
-            spriteRenderer.sprite = threeAcornsSprite;
-        }
-        else if (normalSprite != null)
-        {
-            spriteRenderer.sprite = normalSprite;
-        }
+        _animator_1.SetInteger("Nuts", acornCheeks);
+        /*    if (acornCheeks >= 5 && fiveAcornsSprite != null)
+            {
+                spriteRenderer.sprite = fiveAcornsSprite;
+            }
+            else if (acornCheeks >= 3 && threeAcornsSprite != null)
+            {
+                spriteRenderer.sprite = threeAcornsSprite;
+            }
+            else if (normalSprite != null)
+            {
+                spriteRenderer.sprite = normalSprite;
+            }*/
+
         speedChanger();
     }
 }

@@ -5,6 +5,7 @@ public class Movement : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private float moveSpeed = 12f;
+    [SerializeField] private Animator _animator;
     private Rigidbody2D rb;
     private Vector2 moveInput;
 
@@ -19,14 +20,15 @@ public class Movement : MonoBehaviour
     void Update()
     {
         rb.linearVelocity = moveInput.normalized * moveSpeed;
-    }
+        _animator.SetFloat("Speed", moveSpeed);
+   }
 
     public void Move(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
     }
 
-    
+
     // Called by other scripts
     public void setSpeed(int nuts)
     {
