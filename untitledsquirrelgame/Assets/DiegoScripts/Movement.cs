@@ -21,7 +21,9 @@ public class Movement : MonoBehaviour
     void Update()
     {
         rb.linearVelocity = moveInput.normalized * moveSpeed;
-        _animator.SetFloat("Speed", moveSpeed);
+        //_animator.SetFloat("Speed", moveSpeed);
+        _animator.SetFloat("Speed", moveInput.sqrMagnitude);
+
    }
 
     public void Move(InputAction.CallbackContext context)

@@ -1,91 +1,47 @@
-// using UnityEngine;
-
-// public class MusicSpeedUp : MonoBehaviour
-// {
-//     public AudioSource musicSource; 
-//     public float startPitch = 1f;
-//     public float maxPitch = 2.0f;    // max pitch limit
-//     public float timeToMaxPitch = 120f; // Seconds until it reaches max pitch
-
-//     void Start()
-//     {
-//         if (musicSource == null)
-//             musicSource = GetComponent<AudioSource>();
-//         musicSource.pitch = startPitch;
-//     }
-
-//     void Update()
-//     {
-//         // linearly increase pitch over time
-//         if (musicSource.pitch < maxPitch)
-//         {
-//             float t = Time.time / timeToMaxPitch;
-//             musicSource.pitch = Mathf.Lerp(startPitch, maxPitch, t);
-//         }
-//     }
-// }
-
-// using UnityEngine;
-
-// public class MusicSpeedUp : MonoBehaviour
-// {
-//     public AudioSource musicSource;
-//     public float startPitch = 1f;
-//     public float pitchStep = 0.1f;
-//     public float maxPitch = 2f;  // max pitch limit
-//     public float interval = 20f; // seconds between each pitch increase
-
-//     private float nextIncreaseTime;
-
-//     void Start()
-//     {
-//         if (musicSource == null)
-//             musicSource = GetComponent<AudioSource>();
-
-//         musicSource.pitch = startPitch;
-//         nextIncreaseTime = Time.time + interval;
-//     }
-
-//     void Update()
-//     {
-//         if (Time.time >= nextIncreaseTime && musicSource.pitch < maxPitch)
-//         {
-//             musicSource.pitch += pitchStep;
-//             nextIncreaseTime = Time.time + interval;
-//         }
-//     }
-// }
-
 using UnityEngine;
 
-public class MusicSpeedUp : MonoBehaviour
+public class MusicSpeedUpOnLoop : MonoBehaviour
 {
     public AudioSource musicSource;
     public float startPitch = 1f;
     public float pitchStep = 0.1f;
-    public float maxPitch = 2f;  // max pitch/speed
+    public float maxPitch = 2f;
 
-    private int lastLoopCount = 0;
+    private float lastTime;
 
     void Start()
     {
         if (musicSource == null)
             musicSource = GetComponent<AudioSource>();
 
+        musicSource.playOnAwake = true;
+        musicSource.loop = true;
+
         musicSource.pitch = startPitch;
+        lastTime = musicSource.time;
     }
 
     void Update()
     {
-        // Count how many times the clip has looped
-        int currentLoopCount = Mathf.FloorToInt(musicSource.timeSamples / musicSource.clip.samples);
+        if (musicSource == null || musicSource.clip == null || !musicSource.isPlaying)
+            return;
 
-        // When a new loop starts, increment pitch
-        if (currentLoopCount > lastLoopCount && musicSource.pitch < maxPitch)
+        float currentTime = musicSource.time;
+
+        // if currentTime is significantly less than lastTime, it means the clip looped
+        // small epsilon to avoid false positives
+        if (currentTime < lastTime - 0.01f)
         {
-            musicSource.pitch += pitchStep;
-            lastLoopCount = currentLoopCount;
+            float newPitch = Mathf.Min(musicSource.pitch + pitchStep, maxPitch);
+            if (!Mathf.Approximately(newPitch, musicSource.pitch))
+            {
+                musicSource.pitch = newPitch;
+                Debug.Log("Loop detected");
+            }
         }
+
+        lastTime = currentTime;
     }
 }
+
 

@@ -326,6 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraScroller
   scrollSpeed: 1
+  acceleration: 0.05
   background: {fileID: 1416808968}
   spawner: {fileID: 584109274}
   rowHeight: 1
@@ -2069,7 +2070,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1953674883
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -3930233164492611837, guid: 6a2f04d730b914f40ac9a17c1f1e63b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2150,7 +2151,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 97266212ddf77485ca183a6b4d4e36db, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2263,8 +2264,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MusicSpeedUp
   musicSource: {fileID: 2030114715}
   startPitch: 1
+  pitchStep: 0.1
   maxPitch: 2
-  timeToMaxPitch: 120
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

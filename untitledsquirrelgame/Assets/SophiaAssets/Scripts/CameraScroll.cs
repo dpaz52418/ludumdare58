@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraScroller : MonoBehaviour
 {
-    public float scrollSpeed = 1f;
+    public float scrollSpeed = 2.5f;
     public float acceleration = 0.05f;
     public TilemapBackground background;  
     public CollectSpawn spawner;  // collectibles spawner
