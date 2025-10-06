@@ -21,8 +21,13 @@ public class head_script : MonoBehaviour
 
     public float speed;
     public float scale;
+    void Awake()
+    {
+        squirrel = GameObject.FindGameObjectWithTag("Player");
+    }
     void Start()
     {
+        
         int sorting_order = 30;
         segment_length = 50;
         scale = 0.08645276f;
@@ -60,6 +65,7 @@ public class head_script : MonoBehaviour
 
 
         Vector3 snake_pos = transform.position;
+        Debug.Log(squirrel.transform.position);
         head_direction.x = squirrel.transform.position.x - snake_pos.x;
         head_direction.y = squirrel.transform.position.y - snake_pos.y;
         head_direction = head_direction.normalized;
