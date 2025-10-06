@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collectible
   - Hole
+  - Rock
   layers:
   - Default
   - TransparentFX

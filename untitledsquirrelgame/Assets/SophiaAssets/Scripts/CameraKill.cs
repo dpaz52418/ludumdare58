@@ -19,7 +19,7 @@ public class CameraKill : MonoBehaviour
         // Disable player
         // player.SetActive(false);
 
-        player.SetActive(false);
+        player.SetActive(false);  // this doesn't seem to work tho lol
         SceneManager.LoadScene("GameOver");
      }
 }

@@ -678,10 +678,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectSpawn
   collectibles:
+  - {fileID: 8475238213846911840, guid: 068dcc3a9a15d408dacf0371b41055f3, type: 3}
   - {fileID: 3777491391588335077, guid: ad14c1b3e307e4037b08a493fa09c3e8, type: 3}
   - {fileID: 656648493459497501, guid: de8dfcd22278848d194fefe871e2ed46, type: 3}
   - {fileID: 6879980364211018904, guid: 015d783f928af411c8e83b18ec2c621a, type: 3}
-  - {fileID: 8475238213846911840, guid: 068dcc3a9a15d408dacf0371b41055f3, type: 3}
   spawnChance: 0.025
   rarespawnChance: 0.01
   rowHeight: 1

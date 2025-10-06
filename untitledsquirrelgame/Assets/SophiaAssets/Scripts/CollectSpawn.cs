@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class CollectSpawn : MonoBehaviour
 {
-    [SerializeField] private GameObject[] collectibles;  // NOTE: Assign last 2 in list as rare collectibles (3 acorns + hole)
+    [SerializeField] private GameObject[] collectibles;  // NOTE: Assign last item in list as rare collectibles (3 acorns)
     public float spawnChance = 0.025f;
     public float rarespawnChance = 0.01f;
 
@@ -22,7 +22,7 @@ public class CollectSpawn : MonoBehaviour
             if (Random.value < rarespawnChance)
             {
                 Vector3 pos = new Vector3(x + startX + 0.5f, rowIndex + 0.5f, 0); // * tileSize, 0);
-                GameObject prefab = collectibles[Random.Range(collectibles.Length - 2, collectibles.Length)];
+                GameObject prefab = collectibles[Random.Range(collectibles.Length - 1, collectibles.Length)];
                 GameObject obj = Instantiate(prefab, pos, Quaternion.identity);
                 activeObjects.Add(obj);
             }
@@ -30,7 +30,7 @@ public class CollectSpawn : MonoBehaviour
             else if (Random.value < spawnChance)
             {
                 Vector3 pos = new Vector3(x + startX + 0.5f, rowIndex + 0.5f, 0); // * tileSize, 0);
-                GameObject prefab = collectibles[Random.Range(0, collectibles.Length - 2)];
+                GameObject prefab = collectibles[Random.Range(0, collectibles.Length - 1)];
                 GameObject obj = Instantiate(prefab, pos, Quaternion.identity);
                 activeObjects.Add(obj);
             }
